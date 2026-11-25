@@ -1,0 +1,28 @@
+.studio {
+  max-width: 144rem; margin: 2rem auto; padding: clamp(2rem,5vw,7rem);
+  display: grid; grid-template-columns: 4fr 6fr; align-items: center; gap: 5%;
+  background: #f5f6f5; color: #202627; border-radius: 2rem;
+  font-family: Inter, "PingFang SC", "Microsoft YaHei", sans-serif;
+}
+.studio-copy {padding: 2rem 0}
+.studio-brand {font-size: 1.5rem; font-weight: 650; letter-spacing: .08em; margin: 0 0 3rem}
+.studio h1,.studio h2 {font: 620 clamp(4rem,5.4vw,8rem)/1.12 inherit; font-family: inherit; font-weight: 650; font-size: clamp(4rem,5.4vw,8rem); line-height: 1.12; letter-spacing: -.065em; max-width: 7em; margin: 0}
+.studio-intro {max-width: 26em; color: #4c5354; font-size: 1.7rem; line-height: 1.8; margin: 2rem 0 3rem}
+.studio-buy {display: inline-block; padding: 1.2rem 2.4rem; background: #202627; border-radius: 5rem; color: white; text-decoration: none}
+.studio-guide {min-width: 0; position: relative; margin: 0; padding: 2rem; border: 1px solid #d9ddda; border-radius: 1.5rem}
+.studio-guide legend {font-weight: 600; padding: 0 .7rem; font-size: 1.5rem}
+.studio-radio {position: absolute; opacity: 0; width: 1px; height: 1px}
+.studio-guide label {display: inline-block; cursor: pointer; padding: .7rem 1.4rem; font-size: 1.4rem; border-radius: 4rem}
+.studio-radio:checked + label {background: #fff; box-shadow: 0 1px 5px #20262730}
+.studio-radio:focus-visible + label,.studio-buy:focus-visible {outline: 3px solid #3567bc; outline-offset: 3px}
+.studio-stage {position: relative; aspect-ratio: 100/56; margin: 1rem 0; background-image: radial-gradient(#c9cdc9 .8px,transparent .8px); background-size: 11px 11px}
+.studio-mat {position: absolute; left: 20%; top: 50%; transform: translateY(-50%); width: 60%; aspect-ratio: 2; border-radius: 5%; background: repeating-linear-gradient(120deg,#525f60 0px,#525f60 1px,#536161 2px); box-shadow: 0 4px 5px #25303038,inset 0 -2px 0 #374746; transition: width .25s,left .25s}
+.studio-mat span {position: absolute; inset: 3%; border: 1px dashed #82918e; border-radius: 4%}
+.studio-wide:checked ~ .studio-stage .studio-mat {width: 80%; left: 10%}
+.studio-keyboard {position: absolute; width: 30%; aspect-ratio: 3; left: 32%; top: 50%; transform: translateY(-50%); display: grid; grid-template-columns: repeat(14,1fr); grid-template-rows: repeat(5,1fr); gap: 2%; padding: 1%; box-sizing: border-box; background: #c8c9c4; border-radius: .5rem; box-shadow: 0 3px 4px #151e2055}
+.studio-keyboard i,.studio-keyboard b {background: #faf9f3; border-radius: 20%; box-shadow: 0 1px 1px #888}
+.studio-keyboard b {grid-column: 4/span 8; grid-row: 5}
+.studio-mouse {position: absolute; width: 6%; aspect-ratio: .55; top: 50%; left: 65%; transform: translateY(-50%); border-radius: 48%; background: linear-gradient(100deg,#d8d9d4,#fafaf5 60%,#e3e3df); box-shadow: 0 2px 4px #252b2b66}
+.studio-note {margin: 0; color: #555e59; font-size: 1.3rem}
+@media(max-width: 749px){.studio{grid-template-columns: 1fr; gap: 2rem; margin: 1rem; padding: 2.4rem}.studio h1,.studio h2{max-width: 9em}.studio-brand{margin-bottom: 2rem}.studio-guide{padding: 1.3rem}}
+@media(prefers-reduced-motion: reduce){.studio-mat{transition: none}}

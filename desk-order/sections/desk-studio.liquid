@@ -1,0 +1,39 @@
+{{ 'desk-studio.css' | asset_url | stylesheet_tag }}
+<section class="studio" aria-labelledby="studio-title-{{ section.id }}">
+  <div class="studio-copy">
+    <p class="studio-brand">{% render 'desk-copy', value: section.settings.brand, plain: true %}</p>
+    {% if request.page_type == 'index' %}
+      <h1 id="studio-title-{{ section.id }}">{% render 'desk-copy', value: section.settings.title, plain: true %}</h1>
+    {% else %}
+      <h2 id="studio-title-{{ section.id }}">{% render 'desk-copy', value: section.settings.title, plain: true %}</h2>
+    {% endif %}
+    <p class="studio-intro">{% render 'desk-copy', value: section.settings.description, plain: true %}</p>
+    <a class="studio-buy" href="{{ section.settings.destination | default: routes.all_products_collection_url }}">{{ 'desk.browse' | t | escape }}</a>
+  </div>
+  <fieldset class="studio-guide">
+    <legend>{{ 'desk.guide' | t | escape }}</legend>
+    <input class="studio-radio" type="radio" id="compact-{{ section.id }}" name="width-{{ section.id }}" checked>
+    <label for="compact-{{ section.id }}">{% if request.locale.iso_code contains 'en' %}23.6 × 11.8 in{% else %}60 × 30 cm{% endif %}</label>
+    <input class="studio-radio studio-wide" type="radio" id="wide-{{ section.id }}" name="width-{{ section.id }}">
+    <label for="wide-{{ section.id }}">{% if request.locale.iso_code contains 'en' %}31.5 × 15.7 in{% else %}80 × 40 cm{% endif %}</label>
+    <div class="studio-stage" aria-hidden="true">
+      <div class="studio-mat"><span></span></div>
+      <div class="studio-keyboard">{% for key in (1..55) %}<i></i>{% endfor %}<b></b></div>
+      <div class="studio-mouse"></div>
+    </div>
+    <p class="studio-note">{{ 'desk.note' | t | escape }}</p>
+  </fieldset>
+  {% if pages['desk-mat-size'] != blank %}<a class="link" href="{{ pages['desk-mat-size'].url }}">{{ pages['desk-mat-size'].title | escape }}</a>{% endif %}
+</section>
+{% schema %}
+{
+  "name": "桌面尺寸工作台",
+  "settings": [
+    {"type":"text","id":"brand","label":"品牌","default":"桌序 / Desk Order"},
+    {"type":"text","id":"title","label":"标题","default":"给桌面，留一点空间。"},
+    {"type":"textarea","id":"description","label":"简介","default":"从一张桌垫开始。切换尺寸，看看键盘与鼠标在桌面上各有多少空间。"},
+    {"type":"url","id":"destination","label":"商品或系列链接"}
+  ],
+  "presets":[{"name":"桌面尺寸工作台"}]
+}
+{% endschema %}

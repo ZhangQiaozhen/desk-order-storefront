@@ -1,0 +1,31 @@
+{
+  "sections": {
+    "featured_collection": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "桌面选物",
+        "heading_size": "h2",
+        "collection": "all",
+        "products_to_show": 8,
+        "columns_desktop": 4,
+        "color_scheme": "scheme-1",
+        "show_view_all": true,
+        "swipe_on_mobile": false,
+        "image_ratio": "adapt",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "columns_mobile": "2",
+        "padding_top": 28,
+        "padding_bottom": 36
+      }
+    },
+    "brand": {
+      "type": "desk-hero"
+    }
+  },
+  "order": [
+    "brand",
+    "featured_collection"
+  ]
+}

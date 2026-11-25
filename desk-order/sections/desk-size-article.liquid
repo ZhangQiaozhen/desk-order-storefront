@@ -1,0 +1,10 @@
+{% if request.locale.iso_code contains 'zh' %}
+<article class="page-width page-width--narrow rte"><h1>如何选择桌垫尺寸？</h1><h2>测量可用空间</h2><p>从桌沿量到显示器底座，排除台灯、走线孔和圆角占用的区域。</p><h2>对比两种占地</h2><p>用纸比出 60 × 30 cm 和 80 × 40 cm。搭配约 30 cm 宽的键盘，两种桌垫分别留下约 30 cm 和 50 cm 横向空间，供鼠标与两侧留白分配。</p><h2>试一次日常操作</h2><p>把键盘放入轮廓，按平时习惯移动鼠标。如果越界且桌面深度足够，选择较大尺寸。</p></article>
+{% else %}
+<article class="page-width page-width--narrow rte"><h1>What Size Desk Mat Fits Your Desk?</h1><h2>Measure usable space</h2><p>Measure the clear rectangle between the desk edge and the monitor base. Exclude lamp bases, cable outlets and curved corners.</p><h2>Compare two footprints</h2><p>Tape out 23.6 × 11.8 inches, then 31.5 × 15.7 inches. With a 12-inch keyboard, the smaller mat leaves 11.6 inches of total width to divide between the mouse and margins; the larger leaves 19.5 inches.</p><h2>Try your normal mouse movement</h2><p>Place the keyboard on the outline and move the mouse as you normally would. If it crosses the outline, choose the wider size if your desk has the depth.</p></article>
+{% endif %}
+{% assign mat = all_products['field-felt-desk-mat'] %}
+{% if mat != blank %}<p class="page-width page-width--narrow"><a class="link" href="{{ mat.url }}">{{ mat.title | escape }}</a></p>{% endif %}
+{% schema %}
+{"name":"Desk mat size guide","settings":[]}
+{% endschema %}

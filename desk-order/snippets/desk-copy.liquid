@@ -1,0 +1,22 @@
+{%- case value -%}
+{%- when '给桌面，留一点空间。' -%}{{ 'desk.hero' | t }}
+{%- when '一张桌垫，一个收纳盘。让每天用到的物件，各有其位。' -%}{{ 'desk.intro' | t }}
+{%- when '暖光下的桌垫、键盘与木质收纳盘' -%}{{ 'desk.hero_alt' | t }}
+{%- when '选购桌面系列' -%}{{ 'desk.shop' | t }}
+{%- when '浏览商品' -%}{{ 'desk.browse' | t }}
+{%- when '桌垫尺寸预览' -%}{{ 'desk.guide' | t }}
+{%- when '俯视比例示意 · 键盘宽 30 cm' -%}{{ 'desk.note' | t }}
+{%- when '配送与售后' -%}{{ 'desk.service' | t }}
+{%- when '查看配送范围与时效' -%}{{ 'desk.delivery' | t }}
+{%- when '查看退换条件' -%}{{ 'desk.returns' | t }}
+{%- when '桌序 / Desk Order' -%}{{ 'desk.brand' | t }}
+{%- when '选择适合你的尺寸' -%}{{ 'desk.size' | t }}
+{%- when '对照键盘所占空间，比较两种桌垫。' -%}{{ 'desk.compare' | t }}
+{%- when '从一张桌垫开始。切换尺寸，看看键盘与鼠标在桌面上各有多少空间。' -%}{{ 'desk.size_intro' | t }}
+{%- when '桌面选物' -%}{{ 'desk.featured' | t }}
+{%- when '搭配选购' -%}{{ 'desk.related' | t }}
+{%- when '顾客服务' -%}{{ 'desk.care' | t }}
+{%- when '即将开店' -%}{{ 'desk.opening' | t }}
+{%- when '<p>留下邮箱，接收开店通知。</p>' -%}{{ 'desk.opening_copy' | t }}
+{%- else -%}{% if plain %}{{ value | escape }}{% else %}{{ value }}{% endif %}
+{%- endcase -%}

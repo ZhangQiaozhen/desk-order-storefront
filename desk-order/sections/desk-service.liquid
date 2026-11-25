@@ -1,0 +1,14 @@
+{% if shop.shipping_policy.body != blank or shop.refund_policy.body != blank %}
+  <aside class="page-width section-template-padding" aria-label="{{ 'desk.service' | t | escape }}">
+    <h2 class="h2">{{ 'desk.service' | t | escape }}</h2>
+    {% if shop.shipping_policy.body != blank %}
+      <a class="link underlined-link" href="{{ shop.shipping_policy.url }}">{{ 'desk.delivery' | t | escape }}</a>
+    {% endif %}
+    {% if shop.refund_policy.body != blank %}
+      <a class="link underlined-link" href="{{ shop.refund_policy.url }}">{{ 'desk.returns' | t | escape }}</a>
+    {% endif %}
+  </aside>
+{% endif %}
+{% schema %}
+{"name":"配送与售后","settings":[],"presets":[{"name":"配送与售后"}]}
+{% endschema %}
