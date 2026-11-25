@@ -1,13 +1,35 @@
-# 桌序 Desk Order
+# Desk Order
 
-面向美国市场的双语桌面用品商店。项目包含 Shopify 原生主题、可独立运行的本地模拟商店和商品上架资料。
+A bilingual desk accessories storefront for the US market, built around a Shopify theme and a runnable local commerce demo.
 
-## 本地运行
+![Desk Order desk accessories collection](store/assets/desk-editorial.jpg)
 
-需要 Python 3.8 或以上版本，无第三方 Python 依赖。运行 `python store/launch.py`，或在 Windows 双击「启动桌序商店.cmd」。访问 [英文首页](http://127.0.0.1:18764/en/) 或 [中文首页](http://127.0.0.1:18764/)。
+## Run locally
 
-本地体验支持按规格加购、模拟支付、库存更新、发货和退货退款。在页脚进入商家工作台。该服务仅监听本机回环地址，订单和会话保存在本地 SQLite 数据库。运行 `python store/verify.py` 可在临时数据库中验证交易与 SEO 路由。
+Requires Python 3.8 or later. The demo uses the Python standard library and SQLite.
 
-## Shopify 主题
+```sh
+python store/launch.py
+```
 
-`desk-order/` 包含基于 Dawn 的 Liquid 主题源码，其使用条件见 [Dawn 许可证](desk-order/LICENSE.md)。可将 `Desk-Order-Shopify.zip` 上传至主题库，并参考[店铺接入说明](店铺接入说明.md)配置。美国市场商品草稿及素材见「美国市场上架资料.zip」。商品图、售价及配送条款均用于模拟展示，正式销售前需核验。
+The launcher opens the English storefront in your browser. Switch to Chinese from the navigation. Choose a product to try checkout, then open the merchant dashboard in the footer to fulfill the order or process a return. Payments and shipping are simulated.
+
+## Project
+
+| Directory | Contents |
+| --- | --- |
+| [desk-order/](desk-order/) | Shopify Liquid theme based on Dawn, with configurable storefront sections and a desk mat size guide |
+| [store/](store/) | Local storefront, product photography concepts, checkout and order management |
+| [catalog/](catalog/) | Six draft products with US pricing and Shopify import fields |
+
+## Shopify setup
+
+Set the store currency to USD before importing [the product catalog](catalog/products.csv). Upload the theme by archiving the **contents** of the `desk-order` directory with `layout/`, `templates/` and `assets/` at the archive root. Enable English and Simplified Chinese in Shopify, then add product translations and configure shipping for your market. The theme inherits the [Dawn license](desk-order/LICENSE.md).
+
+## Verification
+
+```sh
+python store/verify.py
+```
+
+The checks run against a temporary database and cover catalog routes, language alternates, product metadata, checkout, inventory and order fulfillment.
